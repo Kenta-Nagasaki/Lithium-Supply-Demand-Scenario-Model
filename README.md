@@ -1,6 +1,6 @@
 # Lithium Supply–Demand Scenario Model
 
-![Lithium Supply-Demand Scenario Model](images/lithium_supply_demand.png)
+![Lithium Supply-Demand Scenario Model](lithium_supply_demand.png)
 
 ## Overview
 
@@ -87,5 +87,6 @@ By explicitly modeling assumptions, it aims to support more consistent and disci
 ---
 
 ## Author
+
 
 Kenta Nagasaki
