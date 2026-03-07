@@ -57,11 +57,10 @@ By explicitly modeling assumptions, it aims to support more consistent and disci
 ## How to Run
 
 1. Arrange the files as follows:
-
- ├ Lithium_model.py
- └ data/
-     ├ ev_sales_iea.csv
-     └ supply_usgs.csv
+├── Lithium_model.py
+└── data/
+    ├── ev_sales_iea.csv
+    └── supply_usgs.csv
 
 2. Run the script:python Lithium_model.py
 
@@ -88,4 +87,5 @@ By explicitly modeling assumptions, it aims to support more consistent and disci
 
 
 Kenta Nagasaki
+
 
