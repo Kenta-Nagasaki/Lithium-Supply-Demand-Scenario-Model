@@ -1,60 +1,59 @@
-# Lithium Supply–Demand Scenario Model
+# リチウム需給シナリオモデル
 
 ![Lithium Supply-Demand Scenario Model](lithium_supply_demand.png)
 
-## Overview
+## 概要
 
-This project is a Python-based scenario model that simulates the lithium supply–demand balance from 2020 to 2030.  
-Based on IEA and USGS outlook data, the model assumes fixed growth rates for EV sales and lithium supply to analyze their impact on the overall lithium market.
+このプロジェクトは、2020年から2030年までのリチウム需給バランスをシミュレーションする、Pythonベースのシナリオモデルです。  
+IEAおよびUSGSの見通しデータをもとに、EV販売台数とリチウム供給量に一定の成長率を仮定し、市場全体の需給バランスにどのような影響を与えるかを分析します。
 
-- Unit: LCE (Lithium Carbonate Equivalent)  
-- Historical data are used through 2024 
-(USGS supply data are actual through 2023 and estimated for 2024).
-- From 2025 onward, projections are based on constant growth rate assumptions  
-
----
-
-## Motivation
-
-Forecasting lithium prices directly is highly uncertain.  
-Instead of attempting price prediction, this model focuses on the structural relationship between demand and supply.  
-
-By explicitly modeling assumptions, it aims to support more consistent and disciplined investment decision-making.
+- 単位：LCE（炭酸リチウム換算）
+- 過去データは2024年まで使用  
+  （USGSの供給データは2023年まで実績値、2024年は推計値）
+- 2025年以降は一定成長率を前提とした将来推計
 
 ---
 
-## Model Structure
+## 背景
 
-- **EV Demand (kt LCE)**  
-  = EV sales × LCE usage per vehicle  
+リチウム価格を直接予測することには大きな不確実性があります。  
+そのため本モデルでは価格予測を行うのではなく、需要と供給の構造的な関係に着目しています。  
 
-- **Total Lithium Demand**  
-  = EV demand × (1 / EV share of total lithium consumption)  
-
-- **Net Lithium Demand**  
-  = Total demand × (1 − Recycling rate)  
-
-- **Total Lithium Supply**  
-  = Previous year’s supply × (1 + Supply growth rate)
+前提条件を明示したうえでモデル化することで、より一貫性があり、規律ある投資判断に役立てることを目的としています。
 
 ---
 
-## Scenario Assumptions
+## モデル構造
 
-- EV annual growth rate: 12%  
-- Supply annual growth rate: 9%
+- **EV由来の需要（kt LCE）**  
+  = EV販売台数 × 1台あたりのLCE使用量
+
+- **総リチウム需要**  
+  = EV由来の需要 ×（1 / リチウム総需要に占めるEV用途比率）
+
+- **純リチウム需要**  
+  = 総需要 ×（1 − リサイクル率）
+
+- **総リチウム供給**  
+  = 前年の供給量 ×（1 + 供給成長率）
 
 ---
 
-## Key Parameters
+## シナリオ前提
 
-- LCE usage per EV: 48 kg  
-- Recycling rate: 5%  
-- Analysis period: 2020–2030  
+- EV年間成長率：12%
+- 供給年間成長率：9%
 
 ---
 
-## Project Structure
+## 主要パラメータ
+
+- EV1台あたりのLCE使用量：48 kg
+- リサイクル率：5%
+- 分析期間：2020年〜2030年
+
+---
+## プロジェクト構成
 
 ```text
 .
@@ -66,26 +65,26 @@ By explicitly modeling assumptions, it aims to support more consistent and disci
 
 ---
 
-## How to Run
+## 実行方法
 
-1. Arrange the files as shown in the project structure.
+1. ファイルを上記のプロジェクト構成に合わせて配置します。
 
-2. Run the script:
+2. 次のスクリプトを実行します。
 
 ```
 python Lithium_model.py
 ```
 
-3. The program generates Lithium Supply–Demand Scenario Model for 2020–2030.
+3. 2020年から2030年までのリチウム需給シナリオモデルが生成されます。
 ---
-## Data Sources
+## データソース
 
-- **EV sales data**: IEA (International Energy Agency), *Global EV Outlook 2025* — World EV sales figures.
-- **Lithium supply data**: USGS (U.S. Geological Survey), *Mineral Commodity Summaries 2022~2025* — Lithium production, converted to LCE.
+- **EV販売データ**: IEA（国際エネルギー機関）『Global EV Outlook 2025』 — 世界のEV販売台数
+- **リチウム供給データ**:USGS（米国地質調査所）『Mineral Commodity Summaries 2022〜2025』 — LCE換算したリチウム生産量
 
 ---
 
-## Requirements
+## 動作環境
 
 - Python 3.9+
 - pandas
@@ -94,7 +93,7 @@ python Lithium_model.py
 
 ---
 
-## Author
+## 作者
 
 
 Kenta Nagasaki
